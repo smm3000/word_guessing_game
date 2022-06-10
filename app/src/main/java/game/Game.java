@@ -1,11 +1,14 @@
 package game;
 
+import java.util.ArrayList;
+
 public class Game {
 
-    String word;
-    int remainingAttempts = 10; 
+    private String word;
+    private ArrayList<Character> guessedLetters = new ArrayList<Character>();
+    private int remainingAttempts = 10;
 
-    public Game (WordChoser choser) { 
+    public Game(WordChoser choser) {
         this.word = choser.getRandomWordFromDictionary();
     }
 
@@ -18,8 +21,8 @@ public class Game {
             } else {
                 builder.append("_");
             }
-    }
-    return builder.toString();
+        }
+        return builder.toString();
 
     }
 
@@ -27,5 +30,14 @@ public class Game {
         return remainingAttempts;
     }
 
-
+    public Boolean guessLetter(Character letter) {
+        if (this.word.indexOf(letter) != -1) {
+            guessedLetters.add(letter);
+            return true;
+        } else {
+            remainingAttempts--;
+            return false;
+        }
+    }
 }
+
