@@ -37,7 +37,7 @@ public class GameTest {
         WordChoser mockedChoser = mock(WordChoser.class);
         when(mockedChoser.getRandomWordFromDictionary()).thenReturn("DEVELOPER");
         Game game = new Game(mockedChoser);
-        assertEquals(game.guessLetter('D'), true);
+        assertEquals(true, game.guessLetter('D'));
     }
 
     @Test 
@@ -45,11 +45,7 @@ public class GameTest {
         WordChoser mockedChoser = mock(WordChoser.class);
         when(mockedChoser.getRandomWordFromDictionary()).thenReturn("DEVELOPER");
         Game game = new Game(mockedChoser);
-        assertEquals(game.guessLetter('Z'), false);
+        assertEquals(false, game.guessLetter('Z'));
     }
-
-
-
-
 }
 
