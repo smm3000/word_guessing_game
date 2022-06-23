@@ -30,12 +30,5 @@ public class App {
         }
 
         while (game.getRemainingAttempts() > 0);
-
-        // for (int i = 0; i  game.getRemainingAttempts(); i++) {
-        //     System.out.println("Enter one letter to guess (" + game.getRemainingAttempts() + " attempts remaining)");
-        //     Character letter = input.next().charAt(0);
-        //     game.guessLetter(letter);
-        // }
-
     }
 }
