@@ -18,15 +18,23 @@ public class App {
         do {
             System.out.println("Enter one letter to guess (" + game.getRemainingAttempts() + " attempts remaining)");
             Scanner scan = new Scanner(System.in);
-            Character guess = scan.next().charAt(0);
-            Boolean result = game.guessLetter(guess);
-
-            if (result == true) {
-                System.out.println("Right!");
-            } else {
-                System.out.println("Wrong");
-            }
+            Character input = scan.nextLine().charAt(0);
+            Boolean result = game.guessLetter(input);
             
+            if (result) {
+                if (game.isGameWon()) {
+                    System.out.println("Right! You have won the game!");
+                    System.out.println(game.getWordToGuess());
+                } else {
+                    System.out.println("Right!");
+                }
+            } else {
+                if (game.isGameLost()) {
+                    System.out.println("Wrong! You lost");
+                } else {
+                    System.out.println("Wrong");
+                }
+            }
         }
 
         while (Boolean.FALSE.equals(game.isGameLost()));
