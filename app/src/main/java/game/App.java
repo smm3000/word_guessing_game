@@ -29,6 +29,7 @@ public class App {
             
         }
 
-        while (game.getRemainingAttempts() > 0);
+        while (Boolean.FALSE.equals(game.isGameLost()));
+        System.out.println("You lose :(");
     }
 }

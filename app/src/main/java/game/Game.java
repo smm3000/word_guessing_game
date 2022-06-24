@@ -46,7 +46,18 @@ public class Game {
         } else {
             return false;
         }
-        
+    }
+
+    public Boolean isGameWon() {
+        for (int i = 1; i < this.word.length(); i++) {
+            Character letter = this.word.charAt(i);
+            if (this.guessedLetters.indexOf(letter) == -1) {
+                return false;
+            }
+        }
+
+        return true; 
+
     }
 }
 
